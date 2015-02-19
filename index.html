@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Kalam' rel='stylesheet' type='text/css'>  	<link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="underscore.js"></script>
+    <script src="handlebars.js"></script>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+        <div class="ibmenuleft" id="menuleft">
+          <img src="githubCat.jpg">
+          <input text="type">
+          <p class="inline">Explore</p>
+          <p class="inline">Gist</p>
+          <p class="inline">Blog</p>
+          <p class="inline">Help</p>
+        </div>
+
+        <div class="ibmenuright" id="menuright">
+
+          <script type="x-handlebars-template" id="header-user-template">
+            <div class="head-user-info">
+              <img src="{{avatar_url}}">
+              {{login}}
+            </div>
+          </script>
+
+          <img src="createNew.jpg">
+          <img src="notifications.jpg">
+          <img src="settings.jpg">
+          <img src="signout.jpg">
+
+        </div>
+
+    </header>
+
+  
+    
+  </body>
+</html>

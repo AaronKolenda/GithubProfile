@@ -1,0 +1,23 @@
+header {
+	height: 75px;
+	background-color: lightgrey;
+
+}
+
+.ibmenuleft {
+	display: inline-block;
+	width: 40%;
+	margin: auto;
+	text-align: center;
+}
+
+.ibmenuright {
+	display: inline-block;
+	width: 40%;
+	margin: auto;
+	text-align: center;
+}
+
+.inline {
+	display: inline-block;
+}
