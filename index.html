@@ -107,7 +107,18 @@
       <div class="nav">
       </div>
 
-      <div class="repositories">
+      <div class="repositories" id="repositories">
+
+        <script type="x-handlebars-template" id="repositories-template">
+
+          {{#each this}}
+            <div class="repoinfo">
+              {{this.name}}
+            </div>
+          {{/each}}
+
+        </script>
+
       </div>
 
 

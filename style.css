@@ -75,8 +75,6 @@ header {
 }
 
 .rightwrapper {
-	text-align: center;
-	height: 100px;
 	display: inline-block;
 	width: 70%;
 	border: 1px solid black;
