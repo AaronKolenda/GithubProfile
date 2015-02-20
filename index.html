@@ -22,12 +22,15 @@
 
         <div class="ibmenuright" id="menuright">
 
+          <div class="head-user-info" id="head-user-info">
+
+
           <script type="x-handlebars-template" id="header-user-template">
-            <div class="head-user-info">
               <img src="{{avatar_url}}">
               {{login}}
-            </div>
           </script>
+
+          </div>
 
           <img src="createNew.jpg">
           <img src="notifications.jpg">
@@ -37,6 +40,80 @@
         </div>
 
     </header>
+
+    <div class="container">
+
+    <div class="leftwrapper">
+
+      <div class="namesavatar" id="namesavatar">
+
+        <script type="x-handlebars-template" id="login-name-template">
+              <img src="{{avatar_url}}">
+              <p>{{name}}</p>
+              <p>{{login}}</p>
+          </script>
+
+      </div>
+
+      <div class="locationjoin" id="locationjoin">
+
+        <script type="x-handlebars-template" id="location-join-template">
+              <div class="locationwrap">
+              <img src="pinpoint.jpg">
+              {{location}}
+              </div>
+
+              <div class="joinwrap">
+              <img src="clock.jpg">
+              {{created_at}}
+              </div>
+          </script>
+
+      </div>
+
+      <div class="following" id="following">
+
+        <script type="x-handlebars-template" id="following-template">
+
+              <div class="followers">
+              {{followers}}
+              <p>Followers</p>
+              </div>
+
+              <div class="starred">
+              {{starred}}
+              <p>Starred</p>
+              </div>
+
+              <div class="following">
+              {{following}}
+              <p>Following</p>
+              </div>
+
+
+          </script>
+
+      </div>
+
+      <div class="organizations">
+      </div>
+
+    </div>
+
+
+
+    <div class="rightwrapper">
+
+      <div class="nav">
+      </div>
+
+      <div class="repositories">
+      </div>
+
+
+    </div>
+
+</div>
 
   
     

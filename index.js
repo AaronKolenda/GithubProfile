@@ -10,12 +10,22 @@ var getUserData = function() {
 
       console.log(userData);
 
-      var avatar_url = userData.avatar_url;
-      var login = userData.login;
-
       var htmlString = templates.headerUserInfo(userData);
 
-      $("#menuright").append(htmlString);  
+      $("#head-user-info").append(htmlString);  
+
+      var loginUserString = templates.loginNameInfo(userData);
+
+      $("#namesavatar").append(loginUserString);  
+
+      var locationJoinString = templates.locationJoinInfo(userData);
+
+      $("#locationjoin").append(locationJoinString); 
+
+      var followingString = templates.followingInfo(userData);
+
+      $("#following").append(followingString);  
+
 
     }
 
@@ -29,8 +39,27 @@ var getTemplates = function(){
 
   var headerUserTemplateString = $("#header-user-template").text()
 
-  templates.headerUserInfo = Handlebars.compile(headerUserTemplateString)
+  templates.headerUserInfo = Handlebars.compile(headerUserTemplateString);
+
+  var loginNameTemplateString = $("#login-name-template").text()
+
+  templates.loginNameInfo = Handlebars.compile(loginNameTemplateString);
+
+  var locationJoinTemplateString = $("#location-join-template").text()
+
+  templates.locationJoinInfo = Handlebars.compile(locationJoinTemplateString);
+
+  var followingTemplateString = $("#following-template").text()
+
+  templates.followingInfo = Handlebars.compile(followingTemplateString);
+
 
 }
+
+$(document).ready(function(){
+    getTemplates();
+    getUserData();
+
+});
 
 
