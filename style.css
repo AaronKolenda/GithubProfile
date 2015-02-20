@@ -51,6 +51,11 @@ header {
 	display: inline-block;
 }
 
+.languagestarsforks {
+	display: inline-block;
+	float: right;
+}
+
 .leftwrapper {
 	width: 25%;
 	margin-right: 40px;
@@ -72,6 +77,10 @@ header {
 .namesavatar img {
 	height: 230px;
 	width: 230px;
+}
+
+.nameupdate {
+	display: inline-block;
 }
 
 .rightwrapper {
