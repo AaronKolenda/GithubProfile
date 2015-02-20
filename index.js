@@ -10,6 +10,8 @@ var getUserData = function() {
 
       console.log(userData);
 
+      userData.created_at = formatDate(userData.created_at);
+
       var htmlString = templates.headerUserInfo(userData);
       $("#head-user-info").append(htmlString);  
 
@@ -71,6 +73,40 @@ var getTemplates = function(){
   var repositoriesTemplateString = $("#repositories-template").text()
   templates.repositoriesInfo = Handlebars.compile(repositoriesTemplateString);
 }
+
+var formatDate = function(str) {
+    var split = str.split("T");
+    var date = split[0];
+    console.log(date);
+
+    var dateSplit = date.split("-");
+    var year = dateSplit[0];
+    var month = dateSplit[1];
+    var day = dateSplit[2];
+    console.log(year);
+    console.log(month);
+    console.log(day);
+
+    var monthString;
+
+    if (month === "01") {monthString = "Jan"}
+    if (month === "02") {monthString = "Feb"}
+    if (month === "03") {monthString = "Mar"}
+    if (month === "04") {monthString = "Apr"}
+    if (month === "05") {monthString = "May"}
+    if (month === "06") {monthString = "Jun"}
+    if (month === "07") {monthString = "Jul"}
+    if (month === "08") {monthString = "Aug"}
+    if (month === "09") {monthString = "Sep"}
+    if (month === "10") {monthString = "Oct"}
+    if (month === "11") {monthString = "Nov"}
+    if (month === "12") {monthString = "Dec"}
+
+    var dateString = (monthString + " " + day + ", " + year);
+
+    return dateString;
+}
+
 
 $(document).ready(function(){
     getTemplates();
