@@ -44,8 +44,8 @@ var getUserRepos = function() {
 
       console.log(userRepos);
 
-      userRepos = _.map(userRepos, function(repo){
-        repo.created_at = formatLastUpdated(repo.created_at);
+      _.map(userRepos, function(repo){
+        repo.updated_at = formatLastUpdated(repo.updated_at);
       });
 
       var repositoriesString = templates.repositoriesInfo(userRepos);
@@ -137,12 +137,7 @@ var formatLastUpdated = function(s) {
     var currentSecond = userDate.getSeconds();
     var currentMonth = userDate.getMonth();
 
-    console.log(currentDay);
-    console.log(currentMonth);
-    console.log(currentYear);
-    console.log(currentHour);
-    console.log(currentMinute);
-    console.log(currentSecond);
+    currentMonth = currentMonth + 1;
 
     var secondsDiff = currentSecond - second;
     var minutesDiff = currentMinute - minute;
@@ -151,14 +146,7 @@ var formatLastUpdated = function(s) {
     var monthDiff = currentMonth - month;
     var yearDiff = currentYear - year;
 
-
-    console.log(secondsDiff);
-    console.log(minutesDiff);
-    console.log(hoursDiff);
-    console.log(daysDiff);
-
     var finalString;
-
     var monthString;
 
     if (month === "01") {monthString = "Jan"}
@@ -174,30 +162,36 @@ var formatLastUpdated = function(s) {
     if (month === "11") {monthString = "Nov"}
     if (month === "12") {monthString = "Dec"}
 
-    if (yearDiff > 0) {
-      if (monthDiff > 0) {
-        if (daysDiff > 0) {
-          if (hoursDiff > 0) {
-            if (minutesDiff > 0) {
-              if (secondsDiff > 0) {
-                finalString = ("Updated " + secondsDiff + " seconds ago");
 
-              }
-              finalString = ("Updated " + minutesDiff + " minutes ago");
-            }
-          finalString = ("Updated " + hoursDiff + " hours ago");
-          }
-        finalString = ("Updated " + daysDiff + " days ago");
-        }
-        finalString = ("Updated " + monthString + " " + day + ", " + year);
-      }
+    if (yearDiff > 0) {
       finalString = ("Updated " + monthString + " " + day + ", " + year);
     }
 
-console.log(finalString);
-return finalString;
+    if (yearDiff == 0 && monthDiff > 0) {
+      finalString = ("Updated " + monthString + " " + day + ", " + year);
+    }
 
+    if (yearDiff == 0 && monthDiff == 0 && daysDiff > 0) {
+      finalString = ("Updated " + daysDiff + " days ago");
+    }
 
+    if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff > 0) {
+      finalString = ("Updated " + hoursDiff + " days ago");
+    }
+
+    if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff == 0 && minutesDiff > 0) {
+      finalString = ("Updated " + minutesDiff + " days ago");
+    }
+
+    if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff == 0 && minutesDiff == 0 && secondsDiff > 0) {
+      finalString = ("Updated " + secondsDiff + " days ago");
+    }
+
+    if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff == 0 && minutesDiff == 0 && secondsDiff == 0) {
+      finalString = "Updated just now";
+    }
+
+    return finalString;
 }
 
 

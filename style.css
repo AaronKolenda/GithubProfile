@@ -86,6 +86,10 @@ header {
 	display: inline-block;
 }
 
+.repoinfo {
+	padding: 10px;
+}
+
 .rightwrapper {
 	display: inline-block;
 	width: 70%;
