@@ -128,14 +128,14 @@ var formatLastUpdated = function(s) {
     var minute = timeSplit[1];
     var second = timeSplit[2];
 
-    var userDate = new Date();
+    var currentDate = new Date();
     
-    var currentDay = userDate.getDate();
-    var currentYear = userDate.getFullYear();
-    var currentHour = userDate.getHours();
-    var currentMinute = userDate.getMinutes();
-    var currentSecond = userDate.getSeconds();
-    var currentMonth = userDate.getMonth();
+    var currentDay = currentDate.getUTCDate();
+    var currentYear = currentDate.getUTCFullYear();
+    var currentHour = currentDate.getUTCHours();
+    var currentMinute = currentDate.getUTCMinutes();
+    var currentSecond = currentDate.getUTCSeconds();
+    var currentMonth = currentDate.getUTCMonth();
 
     currentMonth = currentMonth + 1;
 
@@ -176,15 +176,30 @@ var formatLastUpdated = function(s) {
     }
 
     if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff > 0) {
-      finalString = ("Updated " + hoursDiff + " days ago");
+      if (hoursDiff == 1) {
+      finalString = ("Updated " + hoursDiff + " hour ago");
+      }
+      if (hoursDiff > 1) {
+      finalString = ("Updated " + hoursDiff + " hours ago");
+      }
     }
 
     if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff == 0 && minutesDiff > 0) {
-      finalString = ("Updated " + minutesDiff + " days ago");
+      if (minutesDiff == 1) {
+      finalString = ("Updated " + minutesDiff + " minute ago");
+      }
+      if (minutesDiff > 1) {
+      finalString = ("Updated " + minutesDiff + " minutes ago");
+      }
     }
 
     if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff == 0 && minutesDiff == 0 && secondsDiff > 0) {
-      finalString = ("Updated " + secondsDiff + " days ago");
+      if (secondsDiff == 1) {
+      finalString = ("Updated " + secondsDiff + " second ago");
+      }
+      if (secondsDiff > 1) {
+      finalString = ("Updated " + secondsDiff + " seconds ago");
+      }
     }
 
     if (yearDiff == 0 && monthDiff == 0 && daysDiff == 0 && hoursDiff == 0 && minutesDiff == 0 && secondsDiff == 0) {
