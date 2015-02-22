@@ -14,16 +14,81 @@
 
 .followers {
 	display: inline-block;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 1;
+	color: rgb(65,131,196);
+	padding-right: 15px;
+	padding-left: 15px;
+
+}
+
+.followers p {
+	font-size: 11px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	color: rgb(153, 153, 153);
 }
 
 .following {
 	display: inline-block;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 1;
+	color: rgb(65,131,196);
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.following p {
+	font-size: 11px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	color: rgb(153, 153, 153);
+}
+
+.followwrap {
+	font-family: helvetica, sans-serif;
+	text-align: center;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid rgb(211, 211, 211);
 }
 
 header {
 	height: 50px;
 	background-color: rgb(245, 245, 245);
+	line-height: 50px;
+	text-align: center;
+}
 
+header .ibmenuright {
+	text-align: right;
+}
+
+header img {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+header input {
+	border:1px solid rgb(204,204,204);
+	width: 300px;
+	height: 25px;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: rgb(204, 204, 204);
+	padding-left: 5px;
+}
+
+header p {
+	color: rgb(51, 51, 51);
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: helvetica, sans-serif;
+	font-size: 13px;
 }
 
 .head-user-info{
@@ -38,14 +103,15 @@ header {
 
 .ibmenuleft {
 	display: inline-block;
-	width: 40%;
+	width: 43%;
 	margin: auto;
-	text-align: center;
+	text-align: left;
+	font-family: helvetica, sans-serif;
 }
 
 .ibmenuright {
 	display: inline-block;
-	width: 40%;
+	width: 37%;
 	margin: auto;
 	text-align: center;
 }
@@ -54,36 +120,92 @@ header {
 	display: inline-block;
 }
 
+.joinwrap {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
 .languagestarsforks {
 	display: inline-block;
 	float: right;
+	margin-top: 30px;
+	font-family: helvetica,sans-serif;
+	font-size: 13px;
+	color: rgb(136, 136, 136);
+	font-weight: bold;
+}
+
+.languagestarsforks p {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+
+.loginbig {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 24px;
+	color: rgb(102, 102, 102);
 }
 
 .leftwrapper {
-	width: 25%;
-	margin-right: 40px;
+	width: 23%;
+	margin-right: 20px;
 	display: inline-block;
-	border: 1px solid black;
-	text-align: center;
+	vertical-align: top;
 }
 
 .locationjoin {
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1px solid rgb(211, 211, 211);
+	padding-top: 14px;
+	padding-bottom: 14px;
+	font-size: 15px;
+	font-family: helvetica, sans-serif;
+}
 
+.locationjoin img {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.locationwrap {
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
 
 .namesavatar {
-	padding-bottom: 50px;
-	border-bottom: 1px solid lightgrey;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgb(211, 211, 211);
 }
 
 .namesavatar img {
 	height: 230px;
 	width: 230px;
+	border-radius: 9px;
+}
+
+.namebig {
+	font-size: 26px;
+	line-height: 30px;
+	text-align: left;
+	font-weight: bold;
 }
 
 .nameupdate {
 	display: inline-block;
+}
+
+.organizations {
+	font-weight: bold;
+	font-family: helvetica,sans-serif;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	line-height: 1.1;
+}
+
+.organizations img {
+	margin-top: 15px;
 }
 
 .orgAvatar {
@@ -93,15 +215,44 @@ header {
 
 .repoinfo {
 	padding: 10px;
+	border-top: 1px solid rgb(211, 211, 211);
+	margin-bottom: 15px;
+}
+
+.reponame {
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: bold;
+	font-family: helvetica, sans-serif;
+	color: rgb(65,131,196);
+	padding-top: 20px;
+	padding-bottom: 9px;
 }
 
 .rightwrapper {
 	display: inline-block;
-	width: 70%;
-	border: 1px solid black;
+	width: 73%;
 }
 
 .starred {
 	display: inline-block;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 1;
+	color: rgb(65,131,196);
+	padding-right: 15px;
+	padding-left: 15px;
+}
 
+.starred p {
+	font-size: 11px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	color: rgb(153, 153, 153);
+}
+
+.updated {
+	font-family: helvetica, sans-serif;
+	font-size: 13px;
+	color: rgb(136, 136, 136);
 }

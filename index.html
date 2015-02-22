@@ -14,7 +14,7 @@
     <header>
         <div class="ibmenuleft" id="menuleft">
           <img src="githubCat.jpg">
-          <input text="type">
+          <input text="type" value="Search GitHub">
           <p class="inline">Explore</p>
           <p class="inline">Gist</p>
           <p class="inline">Blog</p>
@@ -28,7 +28,7 @@
 
           <script type="x-handlebars-template" id="header-user-template">
               <img src="{{avatar_url}}">
-              {{login}}
+              <p class="inline">{{login}}</p>
           </script>
 
           </div>
@@ -50,8 +50,8 @@
 
         <script type="x-handlebars-template" id="login-name-template">
               <img src="{{avatar_url}}">
-              <p>{{name}}</p>
-              <p>{{login}}</p>
+              <p class="namebig">{{name}}</p>
+              <p class="loginbig">{{login}}</p>
           </script>
 
       </div>
@@ -97,7 +97,7 @@
 
       </div>
 
-      <div class="following" id="following">
+      <div class="followwrap" id="following">
 
         <script type="x-handlebars-template" id="following-template">
 
@@ -161,8 +161,8 @@
           {{#each this}}
             <div class="repoinfo">
               <div class="nameupdate">
-              <p>{{this.name}}</p>
-              <p>{{this.updated_at}}</p>
+              <p class="reponame">{{this.name}}</p>
+              <p class="updated">{{this.updated_at}}</p>
               </div>
 
               <div class="languagestarsforks">
