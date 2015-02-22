@@ -85,6 +85,28 @@ var getUserStarred = function() {
 
 } 
 
+var getUserOrgs = function() {
+
+  $.ajax({
+
+    url: "https://api.github.com/users/AaronKolenda/orgs?access_token=85125e5a99be21e5bf22ba26ebd5faf7a388dcb4",
+
+    method: "GET",
+
+    success: function(userOrgs) {
+
+      console.log(userOrgs);
+
+      var organizationsString = templates.organizationsInfo(userOrgs);
+      $("#leftwrapper").append(organizationsString);
+    
+
+
+    }
+
+  });
+
+} 
 
 
 
@@ -109,6 +131,9 @@ var getTemplates = function(){
 
   var starredTemplateString = $("#starred-template").text()
   templates.starredInfo = Handlebars.compile(starredTemplateString);
+
+  var organizationsTemplateString = $("#organizations-template").text()
+  templates.organizationsInfo = Handlebars.compile(organizationsTemplateString);
 }
 
 
@@ -247,6 +272,7 @@ $(document).ready(function(){
     getUserData();
     getUserRepos();
     getUserStarred();
+    getUserOrgs();
 
 });
 

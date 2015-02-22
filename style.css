@@ -86,6 +86,11 @@ header {
 	display: inline-block;
 }
 
+.orgAvatar {
+	height: 42px;
+	width: 42px;
+}
+
 .repoinfo {
 	padding: 10px;
 }

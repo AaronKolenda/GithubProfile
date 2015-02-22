@@ -44,7 +44,7 @@
 
     <div class="container">
 
-    <div class="leftwrapper">
+    <div class="leftwrapper" id="leftwrapper">
 
       <div class="namesavatar" id="namesavatar">
 
@@ -119,8 +119,22 @@
 
       </div>
 
-      <div class="organizations">
-      </div>
+      
+
+        <script type="x-handlebars-template" id="organizations-template">
+
+              {{#if this}}
+              <div class="organizations">
+              <p>Organizations</p>
+              {{#each this}}
+              <img class="orgAvatar" src="{{this.avatar_url}}">
+              {{/each}}
+              </div>
+              {{/if}}
+
+        </script>
+
+      
 
     </div>
 
