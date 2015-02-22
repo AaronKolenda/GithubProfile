@@ -59,10 +59,35 @@
       <div class="locationjoin" id="locationjoin">
 
         <script type="x-handlebars-template" id="location-join-template">
+
+              {{#if company}}
+              <div class="companywrap">
+              <img src="company.jpg">
+              {{company}}
+              </div>
+              {{/if}}
+
+
+              {{#if location}}
               <div class="locationwrap">
               <img src="pinpoint.jpg">
               {{location}}
               </div>
+              {{/if}}
+
+              {{#if email}}
+              <div class="emailwrap">
+              <img src="email.jpg">
+              {{email}}
+              </div>
+              {{/if}}
+
+              {{#if blog}}
+              <div class="blogwrap">
+              <img src="blog.jpg">
+              {{blog}}
+              </div>
+              {{/if}}
 
               <div class="joinwrap">
               <img src="clock.jpg">
@@ -81,9 +106,7 @@
               <p>Followers</p>
               </div>
 
-              <div class="starred">
-              {{starred}}
-              <p>Starred</p>
+              <div id="starred" class="inline">
               </div>
 
               <div class="following">
@@ -100,6 +123,15 @@
       </div>
 
     </div>
+
+    <script type="x-handlebars-template" id="starred-template">
+
+              <div class="starred">
+              {{this}}
+              <p>Starred</p>
+              </div>
+
+    </script>
 
 
 
